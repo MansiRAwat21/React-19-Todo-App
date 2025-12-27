@@ -36,7 +36,7 @@ export default function Tooltip({
         <div
           role="tooltip"
           className={`
-            absolute z-50 px-2 py-1 text-xs rounded-md
+            absolute z-40 px-2 py-1 text-xs rounded-md
             bg-gray-900 text-white
             whitespace-nowrap
             ${positionClasses[position]}

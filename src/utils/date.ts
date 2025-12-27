@@ -7,6 +7,14 @@ export const formatDate = (dateString: string) => {
     year: "numeric",
   });
 };
+export const formatMMDDYY = (dateString: string) => {
+  const d = new Date(dateString);
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  const year = String(d.getFullYear()); // last 2 digits
+  return `${month}/${day}/${year}`; // mm/dd/yy
+};
+
 
 
 export const formatDateTime = (dateString: string) => {

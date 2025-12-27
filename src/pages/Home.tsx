@@ -1,6 +1,5 @@
 import Header from '../components/todo/Header';
 import StatsCards from "../components/todo/StatsCards";
-import FormTodo from "../components/todo/FormTodo";
 import { useAuth } from '../context/AuthContext';
 import ListContainer from '../components/todo/ListContainer';
 import { useQuery } from '@tanstack/react-query';
@@ -19,10 +18,12 @@ const Home = () => {
   const { user } = useAuth();
   const { data, isLoading } = useGetTodos(user?._id as string);
     return (
-        <div className="app-bg min-h-screen theme-transition w-4xl mx-auto px-5">
+      <div className="app-bg min-h-screen theme-transition max-w-4xl mx-auto ">
             <Header />
-            <StatsCards />
+            <div className='px-5 sm:px-3'>
+              <StatsCards />
             <ListContainer data={data} isLoading={isLoading}/>
+            </div>
         </div>
     )
 }

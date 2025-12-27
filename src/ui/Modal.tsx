@@ -1,6 +1,7 @@
 // ui/Modal.tsx
 
 import type { ReactNode } from "react";
+import { RxCross2 } from "react-icons/rx";
 
 interface ModalProps {
   isOpen: boolean;
@@ -14,7 +15,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 bg-opacity-50">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-11/12 max-w-md p-6 relative">
+      <div className="bg-white  dark:bg-gray-800 rounded-lg shadow-lg w-11/12 max-w-md p-6 relative">
         {title && (
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             {title}
@@ -22,9 +23,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         )}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+          className="absolute top-6 right-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
         >
-          ✕
+          <RxCross2 className="text-xl" />
         </button>
         {children}
       </div>

@@ -30,7 +30,17 @@ const Header = () => {
 
 
   return (
-    <header className="flex justify-between items-center p-4 pt-7">
+    <header
+      className="
+    flex justify-between items-center
+    sticky top-0 z-50 mb-4
+    px-4 py-3
+    backdrop-blur-xs
+    bg-white/40 dark:bg-gray-900/60  
+    shadow-lg
+    transition-all duration-300
+  "
+    >
       <div className="flex flex-col">
         <h1 className="text-2xl font-bold">Todo Master</h1>
         <p className="text-sm">Advanced task management with style</p>
@@ -51,7 +61,6 @@ const Header = () => {
         <Tooltip content="Theme">
           <button
             onClick={toggleTheme}
-            className="dark:bg-gray-700"
           >
             {theme === "light" ? <FiMoon /> : <FiSun />}
           </button>

@@ -1,4 +1,3 @@
-import { CiSearch } from "react-icons/ci";
 import { category, priorities } from "../../utils/type";
 import { useForm } from "react-hook-form";
 import type { ReactNode } from "react";
@@ -31,23 +30,13 @@ const FormTodo = ({onClose}:any) => {
     };
 
     return (
-            <form onSubmit={handleSubmit(onSubmit)}>
-                {/* Search (optional – usually uncontrolled) */}
-                {/* <div className="relative border flex items-center rounded-lg">
-                    <CiSearch className="absolute left-2 text-xl text-gray-500" />
-                    <input
-                        type="search"
-                        className="pl-8 pr-2 py-1 w-full outline-none"
-                        placeholder="Search..."
-                    />
-                </div> */}
-
+            <form onSubmit={handleSubmit(onSubmit)}>               
                 {/* Task Input */}
                 <div>
                     <input
                         type="text"
                         placeholder="What needs to be done?"
-                        className="pr-2 py-1 w-full outline-none border rounded-lg px-4 mt-4"
+                        className="pr-2 py-1 w-full outline-none border border-gray-300 rounded-lg px-4 mt-4"
                         {...register("task", {
                             required: "Task is required",
                         })}
@@ -58,7 +47,7 @@ const FormTodo = ({onClose}:any) => {
                         </p>
                     )}
                 </div>
-                <textarea className="pr-2 py-1 w-full outline-none border rounded-lg px-4 mt-4"
+                <textarea className="pr-2 py-1 w-full outline-none border border-gray-300 rounded-lg px-4 mt-4"
                     placeholder="Description"
                     {...register("description")}
                 >
@@ -70,7 +59,7 @@ const FormTodo = ({onClose}:any) => {
                     {/* Priority */}
                     <div>
                         <select
-                            className="pr-2 py-1 w-full outline-none border rounded-lg px-4 mt-4 dark:bg-gray-700"
+                            className="pr-2 py-1 w-full outline-none border border-gray-300 rounded-lg px-4 mt-4 dark:bg-gray-700"
                             {...register("priority", {
                                 required: "Priority is required",
                             })}
@@ -92,7 +81,7 @@ const FormTodo = ({onClose}:any) => {
                     {/* Category */}
                     <div>
                         <select
-                            className="pr-2 py-1 w-full outline-none border rounded-lg px-4 mt-4 dark:bg-gray-700"
+                            className="pr-2 py-1 w-full outline-none border border-gray-300 rounded-lg px-4 mt-4 dark:bg-gray-700"
                             {...register("category", {
                                 required: "Category is required",
                             })}
@@ -115,7 +104,7 @@ const FormTodo = ({onClose}:any) => {
                     <div>
                         <input
                             type="date"
-                            className="pr-2 py-1 w-full outline-none border rounded-lg px-4 mt-4"
+                            className="pr-2 py-1 w-full outline-none border border-gray-300 rounded-lg px-4 mt-4"
                             {...register("dueDate", {
                                 required: "Date is required",
                             })}

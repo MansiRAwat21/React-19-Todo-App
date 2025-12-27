@@ -11,6 +11,7 @@ export default function Signup() {
     register,
     handleSubmit,
     watch,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm();
 
@@ -18,7 +19,7 @@ export default function Signup() {
   const navigate = useNavigate();
   const signupMutation = useSignup();
 
- 
+
   const onSubmit = (data: any) => {
     const payload = {
       name: data.name,
@@ -30,6 +31,17 @@ export default function Signup() {
       onSuccess: () => {
         navigate("/login");
       },
+      onError: (error: any) => {
+        const status = error?.response?.status;
+        if (status === 400) {
+          setError("email", {
+            type: "manual",
+            message: "This email is already registered. Please login instead.",
+          });
+        } else {
+          alert(error?.response?.data?.message || "Signup failed");
+        }
+      }
     });
   };
 
